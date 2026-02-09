@@ -8,7 +8,6 @@ import { Education } from '@/components/education/Education'
 import { Contact } from '@/components/contact/Contact'
 import { ScrollProgress } from '@/components/ui/ScrollProgress'
 import { PageLoader } from '@/components/ui/PageLoader'
-import { CursorGlow } from '@/components/effects/CursorGlow'
 
 export default function Home() {
   return (

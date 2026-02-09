@@ -22,20 +22,17 @@ export const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-50px' }}
         onViewportEnter={() => setIsInView(true)}
-        transition={{ 
-          opacity: { duration: 0.5, delay },
-          y: { duration: 0.5, delay }
-        }}
         animate={isInView ? {
           y: [0, -8, 0],
         } : {}}
         transition={{
-          y: {
+          opacity: { duration: 0.5, delay },
+          y: isInView ? {
             duration: 4,
             repeat: Infinity,
             ease: 'easeInOut',
             delay: delay + 0.5,
-          },
+          } : { duration: 0.5, delay }
         }}
         whileHover={hover ? { 
           y: -8,

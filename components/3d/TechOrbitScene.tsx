@@ -54,21 +54,22 @@ function TechLogo({ position, name, index, color }: TechLogoProps) {
   )
 }
 
+const TECH_LOGOS = [
+  { name: 'React', color: '#61DAFB' },
+  { name: 'Next.js', color: '#000000' },
+  { name: 'TypeScript', color: '#3178C6' },
+  { name: 'Tailwind', color: '#06B6D4' },
+  { name: 'JavaScript', color: '#F7DF1E' },
+  { name: 'Git', color: '#F05032' },
+] as const
+
 function TechOrbit() {
   const groupRef = useRef<THREE.Group>(null)
   const orbitRadius = 5
-  const techLogos = [
-    { name: 'React', color: '#61DAFB' },
-    { name: 'Next.js', color: '#000000' },
-    { name: 'TypeScript', color: '#3178C6' },
-    { name: 'Tailwind', color: '#06B6D4' },
-    { name: 'JavaScript', color: '#F7DF1E' },
-    { name: 'Git', color: '#F05032' },
-  ]
 
   const positions = useMemo(() => {
-    return techLogos.map((_, index) => {
-      const angle = (index / techLogos.length) * Math.PI * 2
+    return TECH_LOGOS.map((_, index) => {
+      const angle = (index / TECH_LOGOS.length) * Math.PI * 2
       return [
         Math.cos(angle) * orbitRadius,
         Math.sin(angle * 0.5) * 1.5,
@@ -86,7 +87,7 @@ function TechOrbit() {
 
   return (
     <group ref={groupRef}>
-      {techLogos.map((tech, index) => (
+      {TECH_LOGOS.map((tech, index) => (
         <TechLogo
           key={tech.name}
           position={positions[index]}

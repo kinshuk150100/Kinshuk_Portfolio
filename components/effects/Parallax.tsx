@@ -1,13 +1,13 @@
 'use client'
 
-import { ReactNode, useRef, useEffect, useState } from 'react'
+import { ReactNode, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 interface ParallaxProps {
   children: ReactNode
   speed?: number
   className?: string
-  offset?: [number, number]
+  offset?: ['start end', 'end start'] | ['start start', 'end end'] | string[]
 }
 
 export function Parallax({ 
@@ -19,10 +19,10 @@ export function Parallax({
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset,
+    offset: offset as ['start end', 'end start'],
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', `${speed * 100}%`])
+  const y = useTransform(scrollYProgress, [0, 1], [0, speed * 100])
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 1, 0.3])
 
   return (

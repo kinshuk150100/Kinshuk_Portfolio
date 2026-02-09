@@ -8,19 +8,43 @@ export function PageLoader() {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    // Simulate loading progress
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval)
-          setTimeout(() => setIsLoading(false), 300)
-          return 100
-        }
-        return prev + Math.random() * 15
-      })
-    }, 100)
+    // Wait for page to be fully loaded
+    const handleLoad = () => {
+      setProgress(100)
+      setTimeout(() => setIsLoading(false), 500)
+    }
 
-    return () => clearInterval(interval)
+    // If page is already loaded
+    if (document.readyState === 'complete') {
+      handleLoad()
+    } else {
+      window.addEventListener('load', handleLoad)
+      
+      // Simulate loading progress as fallback
+      const interval = setInterval(() => {
+        setProgress((prev) => {
+          const next = Math.min(prev + Math.random() * 20, 100)
+          if (next >= 100) {
+            clearInterval(interval)
+            setTimeout(() => setIsLoading(false), 300)
+            return 100
+          }
+          return next
+        })
+      }, 50)
+
+      // Fallback: ensure loader disappears after max 2 seconds
+      const timeout = setTimeout(() => {
+        setIsLoading(false)
+        clearInterval(interval)
+      }, 2000)
+
+      return () => {
+        window.removeEventListener('load', handleLoad)
+        clearInterval(interval)
+        clearTimeout(timeout)
+      }
+    }
   }, [])
 
   return (
