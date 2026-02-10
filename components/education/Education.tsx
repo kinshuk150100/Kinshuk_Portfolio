@@ -10,6 +10,7 @@ const education = [
         location: 'Baddi, Himachal Pradesh',
         duration: '2018 – 2022',
         score: 'CGPA 8.76',
+        iconType: 'graduation',
     },
     {
         degree: '12th (ICSE Board)',
@@ -17,6 +18,7 @@ const education = [
         location: 'Pathankot, Punjab',
         duration: '2018',
         score: '77.25%',
+        iconType: 'certificate',
     },
     {
         degree: '10th (ICSE Board)',
@@ -24,12 +26,13 @@ const education = [
         location: 'Pathankot, Punjab',
         duration: '2016',
         score: '79.8%',
+        iconType: 'book',
     },
 ]
 
 export function Education() {
     return (
-        <section id="education" className="py-16 md:py-24 lg:py-32 bg-background">
+        <section id="education" className="py-10 md:py-14 lg:py-20 bg-background">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <RevealOnScroll direction="fade" delay={0.1}>
@@ -70,20 +73,57 @@ export function Education() {
                                             background: 'radial-gradient(circle, #3B82F6 0%, #6C63FF 50%, #9D4EDD 100%)',
                                         }}
                                     >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="white"
-                                            strokeWidth="2"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            className="w-8 h-8"
-                                        >
-                                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                                            <path d="M6 12v5c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2v-5" />
-                                            <path d="M6 12l6 3M6 12l6-3" />
-                                        </svg>
+                                        {item.iconType === 'graduation' ? (
+                                            // Graduation Cap Icon for B.Tech
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="white"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                className="w-8 h-8"
+                                            >
+                                                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                                <path d="M6 12v5c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2v-5" />
+                                                <path d="M6 12l6 3M6 12l6-3" />
+                                            </svg>
+                                        ) : item.iconType === 'certificate' ? (
+                                            // Certificate/Diploma Icon for 12th
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="white"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                className="w-8 h-8"
+                                            >
+                                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                                                <path d="M14 2v6h6" />
+                                                <path d="M10 13h4" />
+                                                <path d="M10 17h4" />
+                                                <path d="M8 9h8" />
+                                            </svg>
+                                        ) : (
+                                            // Book Icon for 10th
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="white"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                className="w-8 h-8"
+                                            >
+                                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                                <path d="M6.5 2H2v20h20V8H8.5L6.5 2z" />
+                                                <path d="M10 2v8h8" />
+                                            </svg>
+                                        )}
                                     </div>
 
                                     {/* Content */}

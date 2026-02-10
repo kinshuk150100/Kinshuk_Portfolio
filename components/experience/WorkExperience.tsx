@@ -11,7 +11,7 @@ const experiences = [
     duration: 'Dec 2021 - June 2022',
     achievements: [
       'Assisted in developing frontend features using React.js and JavaScript',
-      'Learned and implemented responsive design principles using CSS and Tailwind CSS',
+      'Learned and implemented responsive design principles using CSS',
       'Participated in code reviews and learned best practices for clean code',
       'Worked on bug fixes and minor feature implementations',
       'Collaborated with senior developers to understand project architecture',
@@ -27,7 +27,7 @@ const experiences = [
       'Developed and maintained 5+ scalable web applications using React.js, Next.js, and TypeScript',
       'Improved page load performance by 30-40% through memoization, lazy loading, and optimized state management',
       'Implemented global state management using Redux Toolkit and Zustand for complex workflows',
-      'Built reusable, responsive UI components using Ant Design and Tailwind CSS',
+      'Built reusable, responsive UI components using Ant Design and CSS',
       'Integrated RESTful APIs and Web3 services for real-time data handling',
       'Optimized UI for cross-browser compatibility and multiple devices',
       'Collaborated with backend, blockchain, and UI/UX teams in an Agile environment',
@@ -37,7 +37,7 @@ const experiences = [
 
 export function WorkExperience() {
   return (
-    <section id="experience" className="py-16 md:py-24 lg:py-32 bg-background">
+    <section id="experience" className="py-10 md:py-14 lg:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <RevealOnScroll direction="fade" delay={0.1}>

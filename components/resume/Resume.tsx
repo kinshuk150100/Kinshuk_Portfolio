@@ -27,7 +27,7 @@ export function Resume() {
   }
 
   return (
-    <section id="resume" className="py-16 md:py-24 lg:py-32">
+    <section id="resume" className="py-10 md:py-14 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <RevealOnScroll direction="fade" delay={0.1}>

@@ -16,13 +16,18 @@ const skillCategories = [
   },
   {
     title: 'UI & Styling',
-    skills: ['HTML5', 'CSS3', 'Tailwind CSS', 'Ant Design', 'Bootstrap', 'Styled Components', 'SASS', 'SCSS'],
+    skills: ['HTML5', 'CSS3', 'Bootstrap', 'Styled Components', 'SASS', 'SCSS'],
     color: '#EF4444', // Red
   },
   {
     title: 'Testing',
     skills: ['Jest', 'React Testing Library'],
     color: '#22C55E', // Green
+  },
+  {
+    title: 'Domain',
+    skills: ['Web3', 'Web3.js', 'Ethers.js', 'Blockchain', 'SmartContract', 'Blockchain Applications'],
+    color: '#9D4EDD', // Purple
   },
   {
     title: 'APIs & Realtime',
@@ -34,16 +39,11 @@ const skillCategories = [
     skills: ['Git', 'GitHub', 'GitLab', 'Jira', 'Docker'],
     color: '#3B82F6', // Blue
   },
-  {
-    title: 'Domain',
-    skills: ['Web3', 'Web3.js', 'Ethers.js', 'Blockchain', 'SmartContract', 'Blockchain Applications'],
-    color: '#9D4EDD', // Purple
-  },
 ]
 
 export function About() {
   return (
-    <section id="about" className="py-16 md:py-24 lg:py-32 bg-background">
+    <section id="about" className="py-10 md:py-14 lg:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* About Title */}
         <RevealOnScroll direction="fade" delay={0.05}>
@@ -109,7 +109,10 @@ export function About() {
             </h2>
 
             {/* Skills Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <div
+              className="grid gap-6 items-stretch auto-rows-fr"
+              style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}
+            >
               {skillCategories.map((category, index) => (
                 <RevealOnScroll key={category.title} direction="fade" delay={0.1 + index * 0.05}>
                   <motion.div
@@ -117,16 +120,16 @@ export function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.05 }}
-                    className="rounded-xl p-4 md:p-6 border backdrop-blur-sm bg-white/5 dark:bg-white/5 bg-opacity-50 dark:bg-opacity-100 border-purple-500/50 dark:border-purple-500/50"
+                    className="rounded-xl p-4 md:p-6 border backdrop-blur-sm bg-white/5 dark:bg-white/5 bg-opacity-50 dark:bg-opacity-100 border-purple-500/50 dark:border-purple-500/50 overflow-hidden flex flex-col h-full"
                   >
-                    <h3 className="text-lg md:text-xl font-bold text-foreground mb-4">
+                    <h3 className="text-xl font-bold text-foreground mb-4">
                       {category.title}
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {category.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1.5 rounded-lg text-sm font-medium text-white"
+                          className="px-4 py-2 rounded-lg text-base font-medium text-white inline-flex items-center justify-center whitespace-nowrap h-8"
                           style={{
                             background: category.color,
                           }}

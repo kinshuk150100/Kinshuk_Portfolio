@@ -108,7 +108,7 @@ const categories: Category[] = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-transparent to-foreground/5">
+    <section id="skills" className="py-10 md:py-14 lg:py-20 bg-gradient-to-b from-transparent to-foreground/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <RevealOnScroll direction="fade" delay={0.1}>

@@ -7,7 +7,7 @@ import { RotatingIcon } from '@/components/animations/RotatingIcon'
 const skillCategories = [
   {
     title: 'Frontend',
-    skills: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS'],
+    skills: ['React', 'Next.js', 'TypeScript', 'JavaScript'],
   },
   {
     title: 'State Management',

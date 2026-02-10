@@ -56,7 +56,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-16 md:py-24 lg:py-32 bg-background">
+    <section id="projects" className="py-10 md:py-14 lg:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <RevealOnScroll direction="fade" delay={0.1}>
