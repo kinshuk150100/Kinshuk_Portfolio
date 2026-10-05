@@ -73,7 +73,7 @@ export function About() {
               <p className="text-foreground text-base md:text-lg leading-relaxed">
                 React.js Developer with{' '}
                 <span style={{ color: '#EC4899' }} className="font-semibold">
-                  3+ years of experience
+                  4+ years of experience
                 </span>{' '}
                 in building scalable, high-performance web applications. Strong expertise in{' '}
                 <span style={{ color: '#EC4899' }} className="font-semibold">

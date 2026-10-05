@@ -122,7 +122,7 @@ export function Hero() {
                         className="mb-8"
                     >
                         <p className="text-lg md:text-xl text-foreground/70 dark:text-white/70 font-medium">
-                            3+ Years Experience
+                            4+ Years Experience
                         </p>
                     </motion.div>
 
